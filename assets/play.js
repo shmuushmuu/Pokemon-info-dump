@@ -28,7 +28,7 @@ function onYouTubeIframeAPIReady() {
   player = new YT.Player('player', {
     height: '390',
     width: '640',
-    videoId: 'qZqlmHoZYXk',
+    videoId: '1FT5-_U5uM0',
     playerVars: {
       'playsinline': 1
     },
@@ -58,14 +58,14 @@ function stopVideo() {
   player.stopVideo();
 }
 
-function searchByKeyword() {
-    var results = YouTube.Search.list('id,snippet', {q: 'dogs', maxResults: 25});
+// function searchByKeyword() {
+//     var results = YouTube.Search.list('id,snippet', {q: 'dogs', maxResults: 25});
   
-    for(var i in results.items) {
-      var item = results.items[i];
-      Logger.log('[%s] Title: %s', item.id.videoId, item.snippet.title);
-    }
-  }
+//     for(var i in results.items) {
+//       var item = results.items[i];
+//       Logger.log('[%s] Title: %s', item.id.videoId, item.snippet.title);
+//     }
+//   }
   
 
     
