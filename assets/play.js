@@ -1,17 +1,11 @@
 var searchBar = document.querySelector(".btn");
 
-var apiUrl= "https://pokeapi.co/api/v2/pokemon/" + searchBar;
+var apiUrl= "https://pokeapi.co/api/v2/pokemon/" + searchBar + "";
 // 
 
-$(searchBar).click(function () {
-  var textInput = $(this).val();
-  localStorage.setItem(textInput);
-  console.log(textInput);
-  click.preventDefault();
-})
 
 fetch(apiUrl)
-  .then(function (response) {
+.then(function (response) {
     return response.json();
   })
   .then(function (data) {
@@ -20,9 +14,16 @@ fetch(apiUrl)
   .catch(function (error) {
     console.log(error);
   });
-
-// This is the code for the search bar
-function fetchResults 
+  
+  // This is the code for the search bar
+  $(searchBar).click(function () {
+    var textInput = $(this).val();
+    localStorage.setItem(textInput);
+    console.log(textInput);
+    click.preventDefault();
+  })
+  
+//function fetchResults 
 
 // 2. This code loads the IFrame Player API code asynchronously.
 var tag = document.createElement('script');
