@@ -1,5 +1,14 @@
-var apiUrl= "https://pokeapi.co/api/v2/pokemon/pikachu";
+var searchBar = document.querySelector(".btn");
 
+var apiUrl= "https://pokeapi.co/api/v2/pokemon/" + searchBar;
+// 
+
+$(searchBar).click(function () {
+  var textInput = $(this).val();
+  localStorage.setItem(textInput);
+  console.log(textInput);
+  click.preventDefault();
+})
 
 fetch(apiUrl)
   .then(function (response) {
@@ -12,7 +21,8 @@ fetch(apiUrl)
     console.log(error);
   });
 
-
+// This is the code for the search bar
+function fetchResults 
 
 // 2. This code loads the IFrame Player API code asynchronously.
 var tag = document.createElement('script');
