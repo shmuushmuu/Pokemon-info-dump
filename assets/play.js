@@ -12,10 +12,20 @@ function fetchResults(pokemon) {
     })
     .then(function (data) {
       console.log(data);
+      console.log(data.name);
+      console.log(data.types[0].type.name);
+      console.log(data.id);
     })
     .catch(function (error) {
       console.log(error);
     });
+}
+
+function displayPokemon(data) {
+  const pokeName = data.name;
+  const id = data.id;
+  const type = data.types[0].type.name;
+  const cardDiv = document.getElementById("info");
 }
 
 var handleSearch = function (event) {
@@ -26,6 +36,8 @@ var handleSearch = function (event) {
 
 
 searchBtn.addEventListener('click', handleSearch);
+
+  
 
 // 2. This code loads the IFrame Player API code asynchronously.
 var tag = document.createElement('script');
