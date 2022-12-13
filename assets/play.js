@@ -3,25 +3,26 @@
 var searchBtn = document.querySelector('#search-button');
 var pokemonInput = document.querySelector('#pokemon');
 
-function fetchResults(textInput) {
-  var pokeUrl = "https://pokeapi.co/api/v2/pokemon/" + textInput;
-  
+function fetchResults(pokemon) {
+  var pokeUrl = "https://pokeapi.co/api/v2/pokemon/" + pokemon;
+
   fetch(pokeUrl)
-  .then(function (response) {
-    return response.json();
-  })
-  .then(function (data) {
-    console.log(data);
-  })
-  .catch(function (error) {
-    console.log(error);
-  });
+    .then(function (response) {
+      return response.json();
+    })
+    .then(function (data) {
+      console.log(data);
+    })
+    .catch(function (error) {
+      console.log(error);
+    });
 }
 
-var handleSearch = function(event){
-    event.preventDefault();
-    console.log('search');
-  }
+var handleSearch = function (event) {
+  event.preventDefault();
+  var pokemon = pokemonInput.value.trim();
+  fetchResults(pokemon);
+}
 
 
 searchBtn.addEventListener('click', handleSearch);
@@ -35,160 +36,160 @@ firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
 
 // 3. This function creates an <iframe> (and YouTube player)
 //    after the API code downloads.
-// var player;
-// function onYouTubeIframeAPIReady() {
-//   player = new YT.Player('player', {
-//     height: '390',
-//     width: '640',
-//     videoId: '1FT5-_U5uM0',
-//     playerVars: {
-//       'playsinline': 1
-//     },
-//     events: {
-//       'onReady': onPlayerReady,
-//       'onStateChange': onPlayerStateChange
+var player;
+function onYouTubeIframeAPIReady() {
+  player = new YT.Player('player', {
+    height: '390',
+    width: '640',
+    videoId: '1FT5-_U5uM0',
+    playerVars: {
+      'playsinline': 1
+    },
+    events: {
+      'onReady': onPlayerReady,
+      'onStateChange': onPlayerStateChange
+    }
+  });
+}
+
+// 4. The API will call this function when the video player is ready.
+function onPlayerReady(event) {
+  event.target.playVideo();
+}
+
+// 5. The API calls this function when the player's state changes.
+//    The function indicates that when playing a video (state=1),
+//    the player should play for six seconds and then stop.
+var done = false;
+function onPlayerStateChange(event) {
+  if (event.data == YT.PlayerState.PLAYING && !done) {
+    // setTimeout(stopVideo, 6000);
+    done = true;
+  }
+}
+function stopVideo() {
+  player.stopVideo();
+};
+
+// function searchByKeyword() {
+//     var results = YouTube.Search.list('id,snippet', {q: 'dogs', maxResults: 25});
+
+//     for(var i in results.items) {
+//       var item = results.items[i];
+//       Logger.log('[%s] Title: %s', item.id.videoId, item.snippet.title);
 //     }
-//   });
-// }
-
-// // 4. The API will call this function when the video player is ready.
-// function onPlayerReady(event) {
-//   event.target.playVideo();
-// }
-
-// // 5. The API calls this function when the player's state changes.
-// //    The function indicates that when playing a video (state=1),
-// //    the player should play for six seconds and then stop.
-// var done = false;
-// function onPlayerStateChange(event) {
-//   if (event.data == YT.PlayerState.PLAYING && !done) {
-//     // setTimeout(stopVideo, 6000);
-//     done = true;
 //   }
-// }
-// function stopVideo() {
-//   player.stopVideo();
+
+// var videoId = function() {
+//   if buttonFighting("tZjH9cDoM_0");
 // };
 
-// // function searchByKeyword() {
-// //     var results = YouTube.Search.list('id,snippet', {q: 'dogs', maxResults: 25});
+var buttonFighting = document.getElementById("fighting");
 
-// //     for(var i in results.items) {
-// //       var item = results.items[i];
-// //       Logger.log('[%s] Title: %s', item.id.videoId, item.snippet.title);
-// //     }
-// //   }
+buttonFighting.addEventListener("click", function () {
+  player.loadVideoById('tZjH9cDoM_0');
+  ;
+});
 
-// // var videoId = function() {
-// //   if buttonFighting("tZjH9cDoM_0");
-// // };
+var buttonNormal = document.getElementById("normal");
 
-// var buttonFighting = document.getElementById("fighting");
+buttonNormal.addEventListener("click", function () {
+  player.loadVideoById("Coe027IsefE");
+  ;
+});
 
-// buttonFighting.addEventListener("click", function () {
-//   player.loadVideoById('tZjH9cDoM_0');
-//   ;
-// });
+var buttonFire = document.getElementById("fire");
 
-// var buttonNormal = document.getElementById("normal");
+buttonFire.addEventListener("click", function onclick() {
+  player.loadVideoById('d_0DG-b1q4E');
+});
 
-// buttonNormal.addEventListener("click", function () {
-//   player.loadVideoById("Coe027IsefE");
-//   ;
-// });
+var buttonWater = document.getElementById("water");
 
-// var buttonFire = document.getElementById("fire");
+buttonWater.addEventListener("click", function () {
+  player.loadVideoById('qZqlmHoZYXk');
+});
 
-// buttonFire.addEventListener("click", function onclick() {
-//   player.loadVideoById('d_0DG-b1q4E');
-// });
+var buttonGrass = document.getElementById("grass");
 
-// var buttonWater = document.getElementById("water");
+buttonGrass.addEventListener("click", function () {
+  player.loadVideoById('v2tKZaSDqQs');
+});
 
-// buttonWater.addEventListener("click", function () {
-//   player.loadVideoById('qZqlmHoZYXk');
-// });
+var buttonElectric = document.getElementById("electric");
 
-// var buttonGrass = document.getElementById("grass");
+buttonElectric.addEventListener("click", function () {
+  player.loadVideoById('75kksjRxUJU');
+});
 
-// buttonGrass.addEventListener("click", function () {
-//   player.loadVideoById('v2tKZaSDqQs');
-// });
+var buttonIce = document.getElementById("ice");
 
-// var buttonElectric = document.getElementById("electric");
+buttonIce.addEventListener("click", function () {
+  player.loadVideoById('ZAasRwcG-Y0');
+});
 
-// buttonElectric.addEventListener("click", function () {
-//   player.loadVideoById('75kksjRxUJU');
-// });
+var buttonPoison = document.getElementById("poison");
 
-// var buttonIce = document.getElementById("ice");
+buttonPoison.addEventListener("click", function () {
+  player.loadVideoById('hsPH29vRQfQ');
+});
 
-// buttonIce.addEventListener("click", function () {
-//   player.loadVideoById('ZAasRwcG-Y0');
-// });
+var buttonGround = document.getElementById("ground");
 
-// var buttonPoison = document.getElementById("poison");
+buttonGround.addEventListener("click", function () {
+  player.loadVideoById('CXccNw5M3p8');
+});
 
-// buttonPoison.addEventListener("click", function () {
-//   player.loadVideoById('hsPH29vRQfQ');
-// });
+var buttonFlying = document.getElementById("flying");
 
-// var buttonGround = document.getElementById("ground");
+buttonFlying.addEventListener("click", function () {
+  player.loadVideoById('p4qAXciQI-s');
+});
 
-// buttonGround.addEventListener("click", function () {
-//   player.loadVideoById('CXccNw5M3p8');
-// });
+var buttonPsychic = document.getElementById("psychic");
 
-// var buttonFlying = document.getElementById("flying");
+buttonPsychic.addEventListener("click", function () {
+  player.loadVideoById('i9NqqEJUE2k');
+});
 
-// buttonFlying.addEventListener("click", function () {
-//   player.loadVideoById('p4qAXciQI-s');
-// });
+var buttonBug = document.getElementById("bug");
 
-// var buttonPsychic = document.getElementById("psychic");
+buttonBug.addEventListener("click", function () {
+  player.loadVideoById('HlKtbL6ei4k');
+});
 
-// buttonPsychic.addEventListener("click", function () {
-//   player.loadVideoById('i9NqqEJUE2k');
-// });
+var buttonRock = document.getElementById("rock");
 
-// var buttonBug = document.getElementById("bug");
+buttonRock.addEventListener("click", function () {
+  player.loadVideoById('JUInV7VoXpQ');
+});
 
-// buttonBug.addEventListener("click", function () {
-//   player.loadVideoById('HlKtbL6ei4k');
-// });
+var buttonGhost = document.getElementById("ghost");
 
-// var buttonRock = document.getElementById("rock");
+buttonGhost.addEventListener("click", function () {
+  player.loadVideoById('q0ghgMIAdtg');
+});
 
-// buttonRock.addEventListener("click", function () {
-//   player.loadVideoById('JUInV7VoXpQ');
-// });
+var buttonDark = document.getElementById("dark");
 
-// var buttonGhost = document.getElementById("ghost");
+buttonDark.addEventListener("click", function () {
+  player.loadVideoById('9ThNmkCSwbU');
+});
 
-// buttonGhost.addEventListener("click", function () {
-//   player.loadVideoById('q0ghgMIAdtg');
-// });
+var buttonDragon = document.getElementById("dragon");
 
-// var buttonDark = document.getElementById("dark");
+buttonDragon.addEventListener("click", function () {
+  player.loadVideoById('lDqh0J_PuBk');
+});
 
-// buttonDark.addEventListener("click", function () {
-//   player.loadVideoById('9ThNmkCSwbU');
-// });
+var buttonSteel = document.getElementById("steel");
 
-// var buttonDragon = document.getElementById("dragon");
+buttonSteel.addEventListener("click", function () {
+  player.loadVideoById('vilznMR-bn0');
+});
 
-// buttonDragon.addEventListener("click", function () {
-//   player.loadVideoById('lDqh0J_PuBk');
-// });
+var buttonFairy = document.getElementById("fairy");
 
-// var buttonSteel = document.getElementById("steel");
-
-// buttonSteel.addEventListener("click", function () {
-//   player.loadVideoById('vilznMR-bn0');
-// });
-
-// var buttonFairy = document.getElementById("fairy");
-
-// buttonFairy.addEventListener("click", function () {
-//   player.loadVideoById('26Z2Fc91P5A');
-// });
+buttonFairy.addEventListener("click", function () {
+  player.loadVideoById('26Z2Fc91P5A');
+});
