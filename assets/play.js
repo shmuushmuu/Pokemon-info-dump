@@ -1,26 +1,30 @@
 //var apiUrl = "https://pokeapi.co/api/v2/pokemon/pikachu";
 
-var textInput = document.getElementsByClassName(".form-control");
-
-
-// var q = "pokemon";
+var searchBtn = document.querySelector('#search-button');
+var pokemonInput = document.querySelector('#pokemon');
 
 function fetchResults(textInput) {
   var pokeUrl = "https://pokeapi.co/api/v2/pokemon/" + textInput;
-
+  
   fetch(pokeUrl)
-    .then(function (response) {
-      return response.json();
-    })
-    .then(function (data) {
-      console.log(data);
-    })
-    .catch(function (error) {
-      console.log(error);
-    });
-
+  .then(function (response) {
+    return response.json();
+  })
+  .then(function (data) {
+    console.log(data);
+  })
+  .catch(function (error) {
+    console.log(error);
+  });
 }
 
+var handleSearch = function(event){
+    event.preventDefault();
+    console.log('search');
+  }
+
+
+searchBtn.addEventListener('click', handleSearch);
 
 // 2. This code loads the IFrame Player API code asynchronously.
 var tag = document.createElement('script');
