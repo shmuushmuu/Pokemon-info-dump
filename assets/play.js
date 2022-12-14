@@ -1,3 +1,5 @@
+
+const infoDiv = document.getElementById("info");
 var searchBtn = document.querySelector('#search-button');
 var pokemonInput = document.querySelector('#pokemon');
 var pokemonName = pokemonInput.value.trim();
@@ -19,27 +21,40 @@ function fetchResults(pokemonName) {
     .catch(function (error) {
       console.log(error);
     });
+    
 
-}
+  }
 
-function displayPokemon(data) {
-  const pokeName = data.name;
-  const id = data.id;
-  const type = data.types[0].type.name;
-  const infoDiv = document.getElementById("info");
-  //creates which pokemon
-  var heading = document.createElement("h1");
-  heading.innerHTML = pokeName;
-  infoDiv.appendChild(heading);
-  //creates temp of city
-  var pokeType = document.createElement('h2');
-  pokeType.innerHTML = type + " type";
-  infoDiv.appendChild(pokeType);
-  //creates temp description
-  var pokeId = document.createElement('h2');
-  pokeId.innerHTML = "Number " + id;
-  infoDiv.appendChild(pokeId);
-}
+  var buttonClickHandler = function (event) {
+    var newSearch = event.target.getAttribute('search');
+    infoDiv.textContent = '';
+  
+    if (newSearch) {
+      displayPokemon(data);
+  
+    }
+  };
+
+  function displayPokemon(data) {
+    const pokeName = data.name;
+    const id = data.id;
+    const type = data.types[0].type.name;
+    const infoDiv = document.getElementById("info"); 
+    
+    
+    //creates which pokemon
+    var heading = document.createElement("h1");
+    heading.innerHTML = pokeName;
+    infoDiv.appendChild(heading);
+    //creates type of pokemon
+    var pokeType = document.createElement('h2');
+    pokeType.innerHTML = type + " type";
+    infoDiv.appendChild(pokeType);
+    //creates id number
+    var pokeId = document.createElement('h2');
+    pokeId.innerHTML = "Number " + id;
+    infoDiv.appendChild(pokeId);
+  }
 
 var youTubeUrl = "https://www.googleapis.com/youtube/v3/search" + pokemonName;
 
