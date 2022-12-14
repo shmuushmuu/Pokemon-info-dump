@@ -1,16 +1,16 @@
 var searchBtn = document.querySelector('#search-button');
 var pokemonInput = document.querySelector('#pokemon');
+var pokemonName = pokemonInput.value.trim();
 
 function fetchResults(pokemonName) {
   var pokeUrl = "https://pokeapi.co/api/v2/pokemon/" + pokemonName;
-  var youTubeUrl = "https://www.googleapis.com/youtube/v3/search" + pokemonName;
 
   fetch(pokeUrl)
     .then(function (response) {
       return response.json();
     })
     .then(function (data) {
-      console.log(data); 
+      console.log(data);
       console.log(data.name);
       console.log(data.types[0].type.name);
       console.log(data.id);
@@ -19,40 +19,50 @@ function fetchResults(pokemonName) {
     .catch(function (error) {
       console.log(error);
     });
-    
 
-  }
+}
 
-  function displayPokemon(data) {
-    const pokeName = data.name;
-    const id = data.id;
-    const type = data.types[0].type.name;
-    const infoDiv = document.getElementById("info");    
-    //creates which pokemon
-    var heading = document.createElement("h1");
-    heading.innerHTML = pokeName;
-    infoDiv.appendChild(heading);
-    //creates temp of city
-    var pokeType = document.createElement('h2');
-    pokeType.innerHTML = type + " type";
-    infoDiv.appendChild(pokeType);
-    //creates temp description
-    var pokeId = document.createElement('h2');
-    pokeId.innerHTML = "Number " + id;
-    infoDiv.appendChild(pokeId);
-  }
+function displayPokemon(data) {
+  const pokeName = data.name;
+  const id = data.id;
+  const type = data.types[0].type.name;
+  const infoDiv = document.getElementById("info");
+  //creates which pokemon
+  var heading = document.createElement("h1");
+  heading.innerHTML = pokeName;
+  infoDiv.appendChild(heading);
+  //creates temp of city
+  var pokeType = document.createElement('h2');
+  pokeType.innerHTML = type + " type";
+  infoDiv.appendChild(pokeType);
+  //creates temp description
+  var pokeId = document.createElement('h2');
+  pokeId.innerHTML = "Number " + id;
+  infoDiv.appendChild(pokeId);
+}
 
+var youTubeUrl = "https://www.googleapis.com/youtube/v3/search" + pokemonName;
 
+fetch(youTubeUrl)
+  .then(function (response) {
+    return response.json();
+  })
+  .then(function (data) {
+    console.log(data);
+    displayPokemon(data);
+  })
+  .catch(function (error) {
+    console.log(error);
+  });
 
 var handleSearch = function (event) {
   event.preventDefault();
-  var pokemonName = pokemonInput.value.trim();
   fetchResults(pokemonName);
 }
 
 searchBtn.addEventListener('click', handleSearch);
 
-  
+
 
 // 2. This code loads the IFrame Player API code asynchronously.
 var tag = document.createElement('script');
