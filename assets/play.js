@@ -2,10 +2,10 @@
 const infoDiv = document.getElementById("info");
 var searchBtn = document.querySelector('#search-button');
 var pokemonInput = document.querySelector('#pokemon');
-var pokemonName = pokemonInput.value.trim();
+var youTubeID = 'VxYHPYjgFfU';
 
-function fetchResults(pokemonName) {
-  var pokeUrl = "https://pokeapi.co/api/v2/pokemon/" + pokemonName;
+function fetchResults(pokemon) {
+  var pokeUrl = "https://pokeapi.co/api/v2/pokemon/" + pokemon;
 
   fetch(pokeUrl)
     .then(function (response) {
@@ -13,7 +13,6 @@ function fetchResults(pokemonName) {
     })
     .then(function (data) {
       console.log(data);
-      console.log(data.name);
       console.log(data.types[0].type.name);
       console.log(data.id);
       displayPokemon(data);
@@ -21,58 +20,61 @@ function fetchResults(pokemonName) {
     .catch(function (error) {
       console.log(error);
     });
-    
+}
 
-  }
+function youTubeSearch(pokemon) {
+  var youTubeUrl = "https://www.googleapis.com/youtube/v3/search?part=snippet&q=" + pokemon + "&key=AIzaSyCwUe0u6-zfxIepEd7OvZOqjJsDRyM_BWk";
 
-  var buttonClickHandler = function (event) {
-    var newSearch = event.target.getAttribute('search');
-    infoDiv.textContent = '';
-  
-    if (newSearch) {
-      displayPokemon(data);
-  
-    }
-  };
+  fetch(youTubeUrl)
+    .then(function (response) {
+      return response.json();
+    })
+    .then(function (data) {
+      console.log(data);
+      youTubeID = data.items[0].id.videoId;
+      player.loadVideoById(youTubeID);
+    })
+    .catch(function (error) {
+      console.log(error);
+    });
+}
 
-  function displayPokemon(data) {
-    const pokeName = data.name;
-    const id = data.id;
-    const type = data.types[0].type.name;
-    const infoDiv = document.getElementById("info"); 
-    
-    
-    //creates which pokemon
-    var heading = document.createElement("h1");
-    heading.innerHTML = pokeName;
-    infoDiv.appendChild(heading);
-    //creates type of pokemon
-    var pokeType = document.createElement('h2');
-    pokeType.innerHTML = type + " type";
-    infoDiv.appendChild(pokeType);
-    //creates id number
-    var pokeId = document.createElement('h2');
-    pokeId.innerHTML = "Number " + id;
-    infoDiv.appendChild(pokeId);
-  }
+// var buttonClickHandler = function (event) {
+//   var newSearch = event.target.getAttribute('search');
+//   infoDiv.textContent = '';
 
-var youTubeUrl = "https://www.googleapis.com/youtube/v3/search" + pokemonName;
+//   if (newSearch) {
+//     displayPokemon(data);
+//   }
+// };
 
-fetch(youTubeUrl)
-  .then(function (response) {
-    return response.json();
-  })
-  .then(function (data) {
-    console.log(data);
-    displayPokemon(data);
-  })
-  .catch(function (error) {
-    console.log(error);
-  });
+function displayPokemon(data) {
+  const pokeName = data.name;
+  const id = data.id;
+  const type = data.types[0].type.name;
+  const infoDiv = document.getElementById("info");
+  infoDiv.innerHTML = "";
+
+  //creates which pokemon
+  var heading = document.createElement("h1");
+  heading.innerHTML = pokeName;
+  infoDiv.appendChild(heading);
+  //creates type of pokemon
+  var pokeType = document.createElement('h2');
+  pokeType.innerHTML = type + " type";
+  infoDiv.appendChild(pokeType);
+  //creates id number
+  var pokeId = document.createElement('h2');
+  pokeId.innerHTML = "Number " + id;
+  infoDiv.appendChild(pokeId);
+}
+
 
 var handleSearch = function (event) {
   event.preventDefault();
-  fetchResults(pokemonName);
+  var pokemon = pokemonInput.value.trim().toLowerCase();
+  fetchResults(pokemon);
+  youTubeSearch(pokemon);
 }
 
 searchBtn.addEventListener('click', handleSearch);
@@ -93,7 +95,7 @@ function onYouTubeIframeAPIReady() {
   player = new YT.Player('player', {
     height: '390',
     width: '640',
-    videoId: 'VxYHPYjgFfU',
+    videoId: youTubeID,
     playerVars: {
       'playsinline': 1
     },
