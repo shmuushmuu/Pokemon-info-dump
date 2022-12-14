@@ -1,4 +1,4 @@
-//var apiUrl = "https://pokeapi.co/api/v2/pokemon/pikachu";
+
 
 var searchBtn = document.querySelector('#search-button');
 var pokemonInput = document.querySelector('#pokemon');
@@ -11,22 +11,39 @@ function fetchResults(pokemon) {
       return response.json();
     })
     .then(function (data) {
-      console.log(data);
+      console.log(data); 
       console.log(data.name);
       console.log(data.types[0].type.name);
       console.log(data.id);
+      displayPokemon(data);
     })
     .catch(function (error) {
       console.log(error);
     });
-}
+    
 
-function displayPokemon(data) {
-  const pokeName = data.name;
-  const id = data.id;
-  const type = data.types[0].type.name;
-  const cardDiv = document.getElementById("info");
-}
+  }
+
+  function displayPokemon(data) {
+    const pokeName = data.name;
+    const id = data.id;
+    const type = data.types[0].type.name;
+    const infoDiv = document.getElementById("info");    
+    //creates which pokemon
+    var heading = document.createElement("h1");
+    heading.innerHTML = pokeName;
+    infoDiv.appendChild(heading);
+    //creates temp of city
+    var pokeType = document.createElement('h2');
+    pokeType.innerHTML = type + " type";
+    infoDiv.appendChild(pokeType);
+    //creates temp description
+    var pokeId = document.createElement('h2');
+    pokeId.innerHTML = "Number " + id;
+    infoDiv.appendChild(pokeId);
+  }
+
+
 
 var handleSearch = function (event) {
   event.preventDefault();
@@ -53,7 +70,7 @@ function onYouTubeIframeAPIReady() {
   player = new YT.Player('player', {
     height: '390',
     width: '640',
-    videoId: '1FT5-_U5uM0',
+    videoId: 'VxYHPYjgFfU',
     playerVars: {
       'playsinline': 1
     },
@@ -75,7 +92,6 @@ function onPlayerReady(event) {
 var done = false;
 function onPlayerStateChange(event) {
   if (event.data == YT.PlayerState.PLAYING && !done) {
-    // setTimeout(stopVideo, 6000);
     done = true;
   }
 }
@@ -83,18 +99,6 @@ function stopVideo() {
   player.stopVideo();
 };
 
-// function searchByKeyword() {
-//     var results = YouTube.Search.list('id,snippet', {q: 'dogs', maxResults: 25});
-
-//     for(var i in results.items) {
-//       var item = results.items[i];
-//       Logger.log('[%s] Title: %s', item.id.videoId, item.snippet.title);
-//     }
-//   }
-
-// var videoId = function() {
-//   if buttonFighting("tZjH9cDoM_0");
-// };
 
 var buttonFighting = document.getElementById("fighting");
 
