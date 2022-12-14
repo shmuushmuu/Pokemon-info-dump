@@ -4,26 +4,31 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- <link rel="stylesheet" type="text/css" href="style.css"> -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
     <title>Pokemon "Gotta Catch Them All"</title>
 </head>
-<header>
-  <h1>
-   <img src = "assets/images/Pokemon-logo.png" alt ="Pokemon-logo">
-  </h1>
-</header>
-<body>
-    <nav class="navbar bg-light">
-        <div class="container-fluid">
-          <form class="d-flex" role="search">
-            <input class="form-control me-2" type="text" id="pokemon" placeholder="Search" aria-label="Search">
-            <button id ="search-button" class="btn btn-outline-success" type="submit">Search</button>
-          </form>
-        </div>
-      </nav>
-    <div id="player"></div>
 
-      <div>
+<header class="d-flex justify-content-center fs-1">
+  Pokemon! Search below for your favorite Pokemon to learn more!
+</header>
+
+<body class = "bg-secondary">
+  <nav class="navbar">
+      <div class="container-fluid justify-content-center p-2">
+        <form class="d-flex flex-end" role="search">
+          <input class="form-control me-2" type="text" id="pokemon" placeholder="Search" aria-label="Search">
+          <button data-language="html" id ="search-button" class="btn btn-outline-success bg-primary text-light" type="submit">Search</button>
+        </form>
+      </div>
+    </nav>
+    <div class="d-flex justify-content-center">
+      <div id="player" class="d-flex justify-content-center"></div>
+      <div id="info" class= 'text-light p-5'></div>
+    </div>
+
+<div class="d-flex flex-row justify-content-center p-4 margin-5">
+  
+      <div class="p-1">
        <button id="fighting" class="pokemon-type">Fighting</button> 
         <button id="normal" class="pokemon-type">Normal</button>
         <button id="fire" class="pokemon-type">Fire</button>
@@ -32,7 +37,7 @@
         <button id="electric" class="pokemon-type">Electric</button>
       </div>
 
-      <div>
+      <div class="p-1">
         <button id="ice" class="pokemon-type">Ice</button>
         <button id="poison" class="pokemon-type">Poison</button>
         <button id="ground" class="pokemon-type">Ground</button>
@@ -41,7 +46,7 @@
         <button id="bug" class="pokemon-type">Bug</button>
       </div>
 
-      <div>
+      <div class="p-1">
         <button id="rock" class="pokemon-type">Rock</button>
         <button id="ghost" class="pokemon-type">Ghost</button>
         <button id="dark" class="pokemon-type">Dark</button>
@@ -49,14 +54,19 @@
         <button id="steel" class="pokemon-type">Steel</button>
         <button id="fairy" class="pokemon-type">Fairy</button>
   </div>
-  <div id="info" class= 'text-light'></div>
+  
+</div>
+  <p class="d-flex justify-content-center">
+    Pick your favorite types of Pokemon to see a sweet video about their type!
+  </p>
+  
     
     <script src="./assets/play.js">
 
     </script>
 
-    <footer>
-     
+    <footer class="text-danger d-flex justify-content-center fs-1">
+     Made with Love by : Kyle, Sam, and Justin!!
     </footer>
 </body>
 </html>
