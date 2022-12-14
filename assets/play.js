@@ -1,10 +1,9 @@
-
-
 var searchBtn = document.querySelector('#search-button');
 var pokemonInput = document.querySelector('#pokemon');
 
-function fetchResults(pokemon) {
-  var pokeUrl = "https://pokeapi.co/api/v2/pokemon/" + pokemon;
+function fetchResults(pokemonName) {
+  var pokeUrl = "https://pokeapi.co/api/v2/pokemon/" + pokemonName;
+  var youTubeUrl = "https://www.googleapis.com/youtube/v3/search" + pokemonName;
 
   fetch(pokeUrl)
     .then(function (response) {
@@ -47,10 +46,9 @@ function fetchResults(pokemon) {
 
 var handleSearch = function (event) {
   event.preventDefault();
-  var pokemon = pokemonInput.value.trim();
-  fetchResults(pokemon);
+  var pokemonName = pokemonInput.value.trim();
+  fetchResults(pokemonName);
 }
-
 
 searchBtn.addEventListener('click', handleSearch);
 
