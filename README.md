@@ -5,6 +5,7 @@
 - [Header](#header)
 - [Search-Bar](#search-bar)
 - [Types-of-Pokemon](#types-of-pokemon)
+- [Visuals] (#visuals)
 
 
 
@@ -37,6 +38,8 @@ Here is a picture of the buttons that when clicked on it brings up a video and s
 
 
 
-## Background Image 
-![background image](assets/images/pokemon-wallpaper-6.jpg)
+## Visuals
+![Default-page-will-look-like-this] (assets/images/default-pokepage.png)
+![search-example-koffing] (assets/images/koffing-screenshot.png)
+
 
