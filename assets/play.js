@@ -54,20 +54,20 @@ function youTubeSearch(pokemon) {
     
     
     //creates which pokemon
-    var heading = document.createElement("h1");
-    heading.innerHTML = "You've chosen " + pokeName;
+    var heading = document.createElement("h2");
+    heading.innerHTML = pokeName;
     infoDiv.appendChild(heading);
     //creates type of pokemon
-    var pokeType = document.createElement('h2');
-    pokeType.innerHTML = pokeName + " is a " + type + " type Pokemon";
+    var pokeType = document.createElement('h3');
+    pokeType.innerHTML = "type: " + type;
     infoDiv.appendChild(pokeType);
     //creates ability of pokemon
-    var abilities= document.createElement('h2');
-    abilities.innerHTML = "They can do " + ability1 + " and " + ability2;
+    var abilities= document.createElement('h3');
+    abilities.innerHTML = "Innate abilities: " + ability1 + " and " + ability2;
     infoDiv.appendChild(abilities);
     //creates id number
-    var pokeId = document.createElement('h2');
-    pokeId.innerHTML = "Their id number is " + id;
+    var pokeId = document.createElement('h3');
+    pokeId.innerHTML = "Pokedex entry number: " + id;
     infoDiv.appendChild(pokeId);
 
 
