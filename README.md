@@ -5,11 +5,24 @@
 - [Header](#header)
 - [Search-Bar](#search-bar)
 - [Types-of-Pokemon](#types-of-pokemon)
+- [Visuals] (#visuals)
 
 
 
 ## Description
-This is a webpage to help you learn and research about different types of pokemon. It will tell you what type of Pokemon they are, their attributes, their card id and also what powers they use. When you type a Pokemon name in the search bar it will bring up a card of information and a short video about that one Pokemon. Also when clicked on a button under the video it will bring up a video of the top 10 Pokemons about that specfic type. We wanted to make a page that would sway you into liking Pokemon or to help you build a dream team to make you become a PokeMaster!
+Group Members: Kyle Phillips, Sam Craig, and Justin Moran.
+We were tasked with combing two seperate APIs into one website and having them work together.
+Our original concept wasn’t suported by the provided APIs, so we pivited to a different idea:
+Pokemon and YouTube.
+
+We crafted a website that pulled information about specified Pokemon through the beloved
+Pokemon API while also searching for a YouTube video featuring the same searched Pokemon.
+The YouTube video player is imbedded in the site.
+
+Additionally, we have buttons for each Pokemon type. If you click on one of these buttons,
+it will change the embedded YouTube video into a video where a content creator presents
+what they believe are the 10 strongest Pokemon of that type.
+
 ## Header 
 Here is the logo we use at the top of our page for a Title/Header.
 ![Logo we used for header](assets/images/Pok%C3%A9mon-Com-Fundo-Transparente.png)
@@ -25,6 +38,8 @@ Here is a picture of the buttons that when clicked on it brings up a video and s
 
 
 
-## Background Image 
-![background image](assets/images/pokemon-wallpaper-6.jpg)
+## Visuals
+![Default-page-will-look-like-this] (assets/images/default-pokepage.png)
+![search-example-koffing] (assets/images/koffing-screenshot.png)
+
 
