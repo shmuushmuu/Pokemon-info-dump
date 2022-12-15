@@ -1,11 +1,12 @@
 # Pokemon-info-dump
+![link] (https://shmuushmuu.github.io/Pokemon-info-dump/)
 
 ## Table of Content
 - [Description](#description)
 - [Header](#header)
 - [Search-Bar](#search-bar)
 - [Types-of-Pokemon](#types-of-pokemon)
-- [Visuals] (#visuals)
+- [Visuals](#visuals)
 
 
 
@@ -39,7 +40,7 @@ Here is a picture of the buttons that when clicked on it brings up a video and s
 
 
 ## Visuals
-![Default-page-will-look-like-this] (assets/images/default-pokepage.png)
-![search-example-koffing] (assets/images/koffing-screenshot.png)
+![Default-page-will-look-like-this](assets/images/default-pokepage.png)
+![search-example-koffing](assets/images/koffing-screenshot.png)
 
 
