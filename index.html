@@ -6,6 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="style.css">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
+  
     integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
   <title>Pokemon "Gotta Catch Them All"</title>
 </head>
@@ -19,8 +20,8 @@
 
   <body>
     <nav class="navbar">
-      <div class="container-fluid justify-content-center bg-secondary p-2">
-        <form class="d-flex flex-end" role="search">
+      <div class="container-fluid justify-content-center bg-secondary">
+        <form class="d-flex flex-end mt-3" role="search">
           <input class="form-control me-2" type="text" id="pokemon" placeholder="Search" aria-label="Search">
           <div id="search-button">
             <button search="search" class="btn btn-outline-success bg-primary text-light" type="submit">Search</button>
@@ -28,63 +29,64 @@
         </form>
       </div>
     </nav>
+
     <section>
-      <p
-        class="d-flex justify-content-center text-center text-black fs-5 bg-secondary p-3 container border border-dark border border-3 responsive">
+      <p1
+        class="d-flex justify-content-center text-center text-black fs-5 p-4 container responsive">
         This website is to help you learn more about Pokemon types and Pokemon attributes. <br>Search a pokemon or click
         on the
 
         links to help you learn about types of pokemon to help you build your<br> dream team to become a Pokemon Master!
-      </p>
+    </p1>
     </section>
-    <div class="d-flex justify-content-center">
+    <div class="d-flex justify-content-center"> 
       <div id="player" class="d-flex justify-content-center m-5"></div>
       <div id="info" class='text-light bg-dark p-5 border border-warning border border-3'></div>
     </div>
   
 
     <div class="d-flex justify-content-center">
-      <button id="fighting" class="button border border-secondary bg-secondary responsive m-2"><br>Fighting<br><img
+      <button id="fighting" class="button border border-secondary rounded bg-secondary responsive m-2"><br>Fighting<br><img
           src="assets/images/fighting 2 .png" atl="fighting logo"></a></button>
-      <button id="normal" class="button border border-secondary bg-secondary responsive m-2"><br>Normal<br><img
+      <button id="normal" class="button border border-secondary rounded  bg-secondary responsive m-2"><br>Normal<br><img
           src="assets/images/normal_2_-removebg-preview.png" atl="normal logo"></a></button>
-      <button id="fire" class="button border border-secondary bg-secondary responsive m-2"><br>Fire<br><img
+      <button id="fire" class="button border border-secondary rounded bg-secondary responsive m-2"><br>Fire<br><img
           src="assets/images/fire_2_-removebg-preview.png" atl="fire logo"></a></button>
-      <button id="water" class="button border border-secondary bg-secondary responsive m-2"><br>Water<br><img
+      <button id="water" class="button border border-secondary rounded bg-secondary responsive m-2"><br>Water<br><img
           src="assets/images/water_3_-removebg-preview.png" atl="water logo"></a></button>
-      <button id="grass" class="button border border-secondary bg-secondary responsive m-2"><br>Grass<br><img
+      <button id="grass" class="button border border-secondary rounded bg-secondary responsive m-2"><br>Grass<br><img
           src="assets/images/grass_2-removebg-preview.png" atl="grass logo"></a></button>
-      <button id="electric" class="button border border-secondary bg-secondary responsive m-2"><br>Electric<br><img
+      <button id="electric" class="button border border-secondary rounded bg-secondary responsive m-2"><br>Electric<br><img
           src="assets/images/electric_2_-removebg-preview.png" atl="electric logo"></a></button>
     </div>
 
     <div class="d-flex justify-content-center">
-      <button id="ice" class="button border border-secondary bg-secondary responsive m-2"><br>Ice<br><img
+      <button id="ice" class="button border border-secondary rounded bg-secondary responsive m-2"><br>Ice<br><img
           src="assets/images/ice_2_-removebg-preview.png" atl="Ice logo"></a></button>
-      <button id="poison" class="button border border-secondary bg-secondary responsive m-2"><br>Poison<br><img
+      <button id="poison" class="button border border-secondary rounded bg-secondary responsive m-2"><br>Poison<br><img
           src="assets/images/poison_2_-removebg-preview.png" atl="Poison logo"></a></button>
-      <button id="ground" class="button border border-secondary bg-secondary responsive m-2"><br>Ground<br><img
+      <button id="ground" class="button border border-secondary rounded bg-secondary responsive m-2"><br>Ground<br><img
           src="assets/images/ground_2_-removebg-preview.png" atl="Ground logo"></a></button>
-      <button id="flying" class="button border border-secondary bg-secondary responsive m-2"><br>Flying<br><img
+      <button id="flying" class="button border border-secondary rounded bg-secondary responsive m-2"><br>Flying<br><img
           src="assets/images/flying_2_-removebg-preview.png" atl="Flying logo"></a></button>
-      <button id="psychic" class="button border border-secondary bg-secondary responsive m-2"><br>Psychic<br><img
+      <button id="psychic" class="button border border-secondary rounded bg-secondary responsive m-2"><br>Psychic<br><img
           src="assets/images/psychic-removebg-preview.png" atl="Psychic logo"></a></button>
-      <button id="bug" class="button border border-secondary bg-secondary responsive m-2"><br>Bug<br><img
+      <button id="bug" class="button border border-secondary rounded bg-secondary responsive m-2"><br>Bug<br><img
           src="assets/images/bug_2_-removebg-preview.png" atl="Bug logo"></a></button>
     </div>
 
-    <div class="p-1 d-flex justify-content-center">
-      <button id="rock" class="button border border-secondary bg-secondary responsive m-2"><br>Rock<br><img
+    <div class="d-flex justify-content-center">
+      <button id="rock" class="button border border-secondary rounded bg-secondary responsive m-2"><br>Rock<br><img
           src="assets/images/rock_2_-removebg-preview.png" atl="Rock logo"></a></button>
-      <button id="ghost" class="button border border-secondary bg-secondary responsive m-2"><br
+      <button id="ghost" class="button border border-secondary rounded bg-secondary responsive m-2"><br
           class="m-5">Ghost<br><img src="assets/images/ghost_2_-removebg-preview.png" atl="Ghost logo"></a></button>
-      <button id="dark" class="button border border-secondary bg-secondary responsive m-2"><br>Dark<br><img
+      <button id="dark" class="button border border-secondary rounded bg-secondary responsive m-2"><br>Dark<br><img
           src="assets/images/dark_2_-removebg-preview.png" atl="Dark logo"></a></button>
-      <button id="dragon" class="button border border-secondary bg-secondary responsive m-2"><br>Dragon<br><img
+      <button id="dragon" class="button border border-secondary rounded bg-secondary responsive m-2"><br>Dragon<br><img
           src="assets/images/dragon_2_-removebg-preview.png" atl="Dragon logo"></a></button>
-      <button id="steel" class="button border border-secondary bg-secondary responsive m-2"><br>Steel<br><img
+      <button id="steel" class="button border border-secondary rounded bg-secondary responsive m-2"><br>Steel<br><img
           src="assets/images/steel_3_-removebg-preview.png" atl="Steel logo"></a></button>
-      <button id="fairy" class="button border border-secondary bg-secondary responsive m-2"><br>Fairy<br><img
+      <button id="fairy" class="button border border-secondary rounded bg-secondary responsive m-2"><br>Fairy<br><img
           src="assets/images/fairy_2_-removebg-preview.png" atl="Fairy logo"></a></button>
     </div>
 
