@@ -3,9 +3,22 @@
   -webkit-transition-duration: ease;
   transition-duration: ease;
   font-family: 'Times New Roman', Times, serif;
+  margin: 5px;
   font-size: 20pt;
 }
 
 .button:hover {
     box-shadow: 5px 5px 5px 5px rgba(5, 5, 5, 0.24), 5px 5px 5px 5px rgba(0,0,0,0.19);
   }
+
+
+  p1{
+    background-image: url(assets/images/rocket2_8.png);
+    background-size:cover;
+    background-repeat: no-repeat;
+    padding: 3rem;
+    font-family: 'Times New Roman', Times, serif;
+  }
+  
+  
+  
