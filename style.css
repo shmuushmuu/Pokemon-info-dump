@@ -2,9 +2,9 @@
     cursor: pointer;
   -webkit-transition-duration: ease;
   transition-duration: ease;
-  font-family: 'Times New Roman', Times, serif;
+  font-family: 'Pokemon GB';
   margin: 5px;
-  font-size: 20pt;
+  font-size: 12pt;
 }
 
 .button:hover {
@@ -16,8 +16,14 @@
     background-image: url(assets/images/rocket2_8.png);
     background-size:cover;
     background-repeat: no-repeat;
-    padding: 3rem;
-    font-family: 'Times New Roman', Times, serif;
+    padding: 2rem;
+    font-family:'Pokemon GB';
+    font-size: 9pt;
+    
+  }
+
+  p{
+    font-family: 'Pokemon GB';
   }
   
   
